@@ -25,6 +25,7 @@ class Tweet {
         this.username = username;
         this.pictureURL = pictureURL;
         this.timeStamp = new Date();
+        this.message = message;
         this.likes = 0;
         this.retweets = 0;
     }
@@ -49,8 +50,13 @@ class Tweet {
         this.retweets++;
     }
 
-    removeLetter() {
-        return (this.message.substring(0, this.message.length - 1))
+    addLetter(letter) {
+        this.message.push(letter);
+    }
+
+    removeLetter(message()) {
+        this.message.split('');
+        this.message.pop();
     }
 
     // // public static String removeLastChar(String s) {
@@ -61,18 +67,17 @@ class Tweet {
 
 }
 
-let khalilTweet = new Tweet('@khalil_cvn', 'https://photo.com', '', 'Yo whatdup');
+let person = new Tweet('@khalil_cvn', 'https://photo.com', '', 'Yo whatdup');
 
-khalilTweet.like();
-khalilTweet.retweet();
-console.log(khalilTweet);
+person.like();
+person.retweet();
+console.log(person);
 
-khalilTweet.message = "HelloHelloHelloHeHelloHelloHelloHeHelloHelloHelloHeHelloHelloHelloHeHelloHelloHelloHeHelloHelloHelloHeHelloHelloHelloHeHelloHelloHelloHeHelloHelloHelloHe";
-console.log(khalilTweet.message);
+person.message = "HelloHelloHelloHeHelloHelloHelloHeHelloHelloHelloHeHelloHelloHelloHeHelloHelloHelloHeHelloHelloHelloHeHelloHelloHelloHeHelloHelloHelloHeHelloHelloHelloHe";
+console.log(person.message);
 
-khalilTweet.message = "eHelloHello";
-console.log(khalilTweet.message);
+person.message = "eHelloHello";
+console.log(person.message);
 
-khalilTweet.removeLetter();
-console.log(khalilTweet.message);
-
+message().removeLetter();
+console.log(person.message);
