@@ -15,7 +15,7 @@ class Tweet {
 
     constructor(){
         this.message = [];
-        this.maxCharacterLength = 1;
+        this.maxCharacterLength = 140;
     }
     addLetter(letter){
        this.validateCharacterLength();
@@ -34,4 +34,15 @@ class Tweet {
     }
 
 }
+let user = new Tweet();
 
+user.addLetter('h');
+user.addLetter('e');
+user.addLetter('l');
+user.addLetter('l');
+user.addLetter('o');
+user.viewMessage();
+user.removeLetter();
+user.viewMessage();
+user.removeLetter();
+user.viewMessage();
