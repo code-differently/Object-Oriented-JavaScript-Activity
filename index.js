@@ -13,33 +13,24 @@ post.profilePhotoURL = "https://photo.com";
 
 post.timeStamp = new Date();
 
-post.comment('Hey, nice!');
-
+post.comment = 'Hey, nice!';
 console.log(post.comment);
+
+post['comment'] = 'Yo, nice!';
+console.log(post['comment']);
 
 
 // Part 2
 
 class Tweet {
-    constructor(username, pictureURL, timeStamp, message, likes, retweets) {
+    constructor(username, pictureURL, timeStamp, message, likes, retweets, maxCharacterLength) {
         this.username = username;
         this.pictureURL = pictureURL;
         this.timeStamp = new Date();
-        this.message = message;
+        this.message = [];
         this.likes = 0;
         this.retweets = 0;
-    }
-
-    get message() {
-        return this._message;
-    }
-
-    set message(message) {
-        if (message.length <= 140) {
-            this._message = message;
-        } else {
-            console.log('Max character limit reached!')
-        }
+        this.maxCharacterLength = 140;
     }
 
     like() {
@@ -51,12 +42,19 @@ class Tweet {
     }
 
     addLetter(letter) {
+        if (this.message.length + 1 > 140) {
+            console.log('Max character limit of 140 reached!')
+        } else {
         this.message.push(letter);
+        }
     }
 
-    removeLetter(message()) {
-        this.message.split('');
+    removeLetter(message) {
         this.message.pop();
+    }
+
+    viewMessage() {
+        console.log(this.message.join(''));
     }
 
     // // public static String removeLastChar(String s) {
@@ -73,11 +71,12 @@ person.like();
 person.retweet();
 console.log(person);
 
-person.message = "HelloHelloHelloHeHelloHelloHelloHeHelloHelloHelloHeHelloHelloHelloHeHelloHelloHelloHeHelloHelloHelloHeHelloHelloHelloHeHelloHelloHelloHeHelloHelloHelloHe";
-console.log(person.message);
+person.addLetter('c');
+person.addLetter('v');
+person.addLetter('n');
+person.addLetter('o');
+console.log(person.viewMessage())
 
-person.message = "eHelloHello";
-console.log(person.message);
 
-message().removeLetter();
-console.log(person.message);
+person.removeLetter();
+console.log(person.message.join(''));
