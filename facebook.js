@@ -22,28 +22,6 @@ console.log(post.like);
 post.addLikes()
 console.log(post.like);
 
-class Tweet {
-    constructor(name){
-        this.message= [];
-    }
-    addLetter(letter){
-        this.message.push(letter);
-    }
-    removeLetter(){
-        this.message.pop();
-    }
-    viewMessage(){
-        console.log(this.messge);
-    }
-}
-
-post.message = "@coderhino writes code like it's a work of fine art"
-post.time = Math.time;
-post["name"] = "Team EveReady";
-console.log(post.like);
-post.addLikes()
-console.log(post.like);
-
 
 // // properties
 // name 
