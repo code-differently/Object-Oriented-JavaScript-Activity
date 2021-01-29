@@ -1,29 +1,20 @@
-let post1 = {
-    displayName: "Kaleb Burd",
-    picture: "",
-    location: "",
-    comment: "@coderhino why is your code hot garbage?",
-    emoji: ""
-}
 
-let post2 = {
-    displayName: "Kaleb Burd",
-    picture: "",
-    location: "",
-    comment: "@coderhino why is your code hot garbage?",
-    emoji: ""
-}
+let post = {
+    name: "Talyr Williams",
+    message: "I love to code!",
+    comments: "This new macbook is the best!",
+    likes: 3,
+    // function to add on like
+    likePost: function (num = 1) { 
+        this.likes += num;
+    },
+    location: "Wilmington",
+    tag: function(){
+        console.log('tag');
+    },
+    share: function(){
+        console.log('share');
+    }
+};
 
-let post3 = {
-    displayName: "Kaleb Burd",
-    picture: "",
-    location: "",
-    comment: "@coderhino why is your code hot garbage?",
-    emoji: ""
-}
-
-
-console.log(post1.displayName);
-console.log(post1[displayName]);
-
-post3.time = "3 hours";
+console.log(post);
